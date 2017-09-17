@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface Home : UIViewController
+@property (weak, nonatomic) IBOutlet UISlider *sliderR;
+@property (weak, nonatomic) IBOutlet UISlider *sliderG;
+@property (weak, nonatomic) IBOutlet UISlider *sliderB;
 
 
 @end
