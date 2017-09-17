@@ -24,6 +24,7 @@ NSString *hex;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self refreshColor];
 }
 
 void setColor(int rcol,int gcol,int bcol){
@@ -66,29 +67,9 @@ void setColor(int rcol,int gcol,int bcol){
     hexblue = [NSString stringWithFormat:@"%lX",
                (unsigned long)[[@(bcolor) stringValue] integerValue]];
     
-    NSString *hex;
-    
-    hexred=[self formatHex:hexred];
-    hexgreen=[self formatHex:hexgreen];
-    hexblue=[self formatHex:hexblue];
-    hex = [NSString stringWithFormat:@"%@%@%@",hexred,hexgreen,hexblue ];
-    self.txtColor.text=hex;
-    
-}
-
--(NSString*) formatHex:(NSString*)hex{
-    int len = [hex length];
-    if(len==1){
-        hex = [NSString stringWithFormat:@"%@%@",@"0",hex ];
-    }
-    return hex;
 }
 
 - (IBAction)changeRed:(id)sender {
-    [self refreshColor];
-}
-
-- (IBAction)changeAlpha:(id)sender {
     [self refreshColor];
 }
 

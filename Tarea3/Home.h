@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbRed;
 @property (weak, nonatomic) IBOutlet UILabel *lbGreen;
 @property (weak, nonatomic) IBOutlet UILabel *lbBlue;
+@property (weak, nonatomic) IBOutlet UILabel *circle;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtColor;
 
