@@ -88,14 +88,34 @@ void setColor(int rcol,int gcol,int bcol){
 }
 
 - (IBAction)switchVisibleValue:(id)sender {
-    self.lbColor.hidden=true;
-    self.circle.hidden=true;
-    self.lbRed.hidden=true;
-    self.lbGreen.hidden=true;
-    self.lbBlue.hidden=true;
-    self.slRed.hidden=true;
-    self.slGreen.hidden=true;
-    self.slBlue.hidden=true;
+    UISwitch *mySwitch = (UISwitch *)sender;
+    if ([mySwitch isOn]) {
+        NSLog(@"its on!");
+        self.lbColor.hidden=true;
+        self.circle.hidden=true;
+        self.lbRed.hidden=true;
+        self.lbGreen.hidden=true;
+        self.lbBlue.hidden=true;
+        self.slRed.hidden=true;
+        self.slGreen.hidden=true;
+        self.slBlue.hidden=true;
+        self.rlabel.hidden=true;
+        self.glabel.hidden=true;
+        self.blabel.hidden=true;
+    } else {
+        NSLog(@"its off!");
+        self.lbColor.hidden=false;
+        self.circle.hidden=false;
+        self.lbRed.hidden=false;
+        self.lbGreen.hidden=false;
+        self.lbBlue.hidden=false;
+        self.slRed.hidden=false;
+        self.slGreen.hidden=false;
+        self.slBlue.hidden=false;
+        self.rlabel.hidden=false;
+        self.glabel.hidden=false;
+        self.blabel.hidden=false;
+    }
 }
 
 @end
