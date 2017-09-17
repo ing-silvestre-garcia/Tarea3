@@ -8,13 +8,14 @@
 
 #import "Home.h"
 
-@interface Home ()
-{
-    CGRect drawbox;
-}
+int rcolor=0;
+int gcolor=0;
+int bcolor=0;
 
-@property (nonatomic, strong) IBOutlet CircleView *cv;
-@property (nonatomic, strong) UIBezierPath *circlePath;
+UIColor *color;
+NSString *hex;
+
+@interface Home ()
 
 @end
 
@@ -23,20 +24,81 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self drawCircle];
-    [self.cv drawLineWithPath:self.circlePath];
 }
 
--(void)drawCircle {
-    CGFloat start = degreesToRadians(270);
-    CGFloat end = degreesToRadians(630);
-    CGPoint origin = CGPointMake(self.cv.frame.origin.x+4, self.cv.frame.origin.y+4);
-    drawbox = CGRectMake(origin.x, origin.y, self.cv.frame.size.width-2, self.cv.frame.size.height-2);
-    CGPoint midPoint = CGPointMake(CGRectGetWidth(drawbox)/2, CGRectGetWidth(drawbox)/2);
-    CGFloat lineWidth = (CGRectGetWidth(drawbox)/2)*0.25;
-    CGFloat radius = (CGRectGetWidth(drawbox)/2)-lineWidth/2-2;
-    self.circlePath = [UIBezierPath bezierPathWithArcCenter:midPoint radius:radius startAngle:start endAngle:end clockwise:true];
-    self.circlePath.lineWidth = lineWidth;
+void setColor(int rcol,int gcol,int bcol){
+    rcolor=rcol;
+    gcolor=gcol;
+    bcolor=bcol;
+    color=[UIColor colorWithRed:rcolor/255.0
+                          green:gcolor/255.0
+                           blue:bcolor/255.0
+                          alpha:1];
+    
+}
+
+-(void) refreshColor{
+    //Asi se llama a un action
+    //[self changeGreen:nil];
+    
+    gcolor=self.slGreen.value;
+    self.lbGreen.text=[@(gcolor) stringValue];
+    
+    bcolor=self.slBlue.value;
+    self.lbBlue.text=[@(bcolor) stringValue];
+    
+    rcolor=self.slRed.value;
+    self.lbRed.text=[@(rcolor) stringValue];
+    setColor(rcolor, gcolor, bcolor);
+    
+    
+    self.lbColor.backgroundColor=color;
+    
+    NSString *hexred=@"";
+    hexred = [NSString stringWithFormat:@"%lX",
+              (unsigned long)[[@(rcolor) stringValue] integerValue]];
+    
+    NSString *hexgreen=@"";
+    hexgreen = [NSString stringWithFormat:@"%lX",
+                (unsigned long)[[@(gcolor) stringValue] integerValue]];
+    
+    NSString *hexblue=@"";
+    hexblue = [NSString stringWithFormat:@"%lX",
+               (unsigned long)[[@(bcolor) stringValue] integerValue]];
+    
+    NSString *hex;
+    
+    hexred=[self formatHex:hexred];
+    hexgreen=[self formatHex:hexgreen];
+    hexblue=[self formatHex:hexblue];
+    hex = [NSString stringWithFormat:@"%@%@%@",hexred,hexgreen,hexblue ];
+    self.txtColor.text=hex;
+    
+}
+
+-(NSString*) formatHex:(NSString*)hex{
+    int len = [hex length];
+    if(len==1){
+        hex = [NSString stringWithFormat:@"%@%@",@"0",hex ];
+    }
+    return hex;
+}
+
+- (IBAction)changeRed:(id)sender {
+    [self refreshColor];
+}
+
+- (IBAction)changeAlpha:(id)sender {
+    [self refreshColor];
+}
+
+
+- (IBAction)changeGreen:(id)sender {
+    [self refreshColor];
+}
+
+- (IBAction)changeBlue:(id)sender {
+    [self refreshColor];
 }
 
 - (void)didReceiveMemoryWarning {
