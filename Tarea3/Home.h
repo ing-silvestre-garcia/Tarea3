@@ -33,5 +33,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtNombre;
 @property (weak, nonatomic) IBOutlet UITextField *txtTelefono;
+@property (weak, nonatomic) IBOutlet UIButton *btAlerta;
 @end
 
