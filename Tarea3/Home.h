@@ -14,8 +14,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbGreen;
 @property (weak, nonatomic) IBOutlet UILabel *lbBlue;
 @property (weak, nonatomic) IBOutlet UILabel *circle;
-
-@property (weak, nonatomic) IBOutlet UITextField *txtColor;
+@property (weak, nonatomic) IBOutlet UILabel *rlabel;
+@property (weak, nonatomic) IBOutlet UILabel *glabel;
+@property (weak, nonatomic) IBOutlet UILabel *blabel;
 
 @property (weak, nonatomic) IBOutlet UISlider *slRed;
 @property (weak, nonatomic) IBOutlet UISlider *slGreen;
@@ -24,6 +25,8 @@
 - (IBAction)changeGreen:(id)sender;
 - (IBAction)changeBlue:(id)sender;
 - (IBAction)changeRed:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UISwitch *ocultar;
 
 @end
 

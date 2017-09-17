@@ -99,15 +99,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jN2-9d-I3M">
+                                <rect key="frame" x="238" y="88" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchVisibleValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="2MA-K7-Bu1"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="blabel" destination="v0D-eb-niZ" id="ZmH-0n-pD7"/>
                         <outlet property="circle" destination="i3w-7b-t0F" id="fCB-E9-8n7"/>
+                        <outlet property="glabel" destination="iGX-48-fL7" id="x8v-Do-cDo"/>
                         <outlet property="lbBlue" destination="ohc-gg-ulg" id="Upi-rn-dzB"/>
                         <outlet property="lbColor" destination="1ms-hK-PMx" id="8Dp-4G-4n1"/>
                         <outlet property="lbGreen" destination="G2t-ik-dPL" id="VUy-hi-N5X"/>
                         <outlet property="lbRed" destination="4Q3-y9-s2e" id="OYr-3p-fUn"/>
+                        <outlet property="ocultar" destination="jN2-9d-I3M" id="RMH-r5-7Uz"/>
+                        <outlet property="rlabel" destination="oX9-ig-VCX" id="dgL-wp-v3U"/>
                         <outlet property="slBlue" destination="lQD-Ez-SGO" id="LoB-QX-Eaq"/>
                         <outlet property="slGreen" destination="zzZ-pC-xfL" id="8rJ-9K-6oC"/>
                         <outlet property="slRed" destination="iOK-qn-fXR" id="dmm-Lr-TgE"/>

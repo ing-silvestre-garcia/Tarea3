@@ -87,5 +87,15 @@ void setColor(int rcol,int gcol,int bcol){
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)switchVisibleValue:(id)sender {
+    self.lbColor.hidden=true;
+    self.circle.hidden=true;
+    self.lbRed.hidden=true;
+    self.lbGreen.hidden=true;
+    self.lbBlue.hidden=true;
+    self.slRed.hidden=true;
+    self.slGreen.hidden=true;
+    self.slBlue.hidden=true;
+}
 
 @end
