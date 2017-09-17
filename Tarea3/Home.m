@@ -14,6 +14,8 @@ int bcolor=0;
 
 UIColor *color;
 NSString *hex;
+NSString *mensajeCirculo;
+NSString *mensajeAlerta;
 
 @interface Home ()
 
@@ -108,6 +110,27 @@ void setColor(int rcol,int gcol,int bcol){
 -(int)getRandomNumberBetween:(int)from to:(int)to {
     
     return (int)from + arc4random() % (to-from+1);
+}
+
+- (IBAction)getAlertView:(id)sender {
+    UISwitch *mySwitch = (UISwitch *)sender;
+    if ([mySwitch isOn]) {
+        mensajeCirculo = @"No hay circulo";
+    } else {
+        mensajeCirculo = [@"Hex: ",@(rcolor) stringValue];
+    }
+    
+    mensajeAlerta = [@"Nombre: ",self.txtNombre.text,@" Telefono: ",self.txtTelefono.text,@"Circulo: ",mensajeCirculo];
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Alerta"
+        message:mensajeAlerta
+        preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+    handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
