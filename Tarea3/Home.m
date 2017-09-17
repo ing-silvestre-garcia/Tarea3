@@ -82,40 +82,37 @@ void setColor(int rcol,int gcol,int bcol){
     [self refreshColor];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)switchVisibleValue:(id)sender {
     UISwitch *mySwitch = (UISwitch *)sender;
     if ([mySwitch isOn]) {
-        NSLog(@"its on!");
         self.lbColor.hidden=true;
         self.circle.hidden=true;
-        self.lbRed.hidden=true;
-        self.lbGreen.hidden=true;
-        self.lbBlue.hidden=true;
-        self.slRed.hidden=true;
-        self.slGreen.hidden=true;
-        self.slBlue.hidden=true;
-        self.rlabel.hidden=true;
-        self.glabel.hidden=true;
-        self.blabel.hidden=true;
     } else {
-        NSLog(@"its off!");
         self.lbColor.hidden=false;
         self.circle.hidden=false;
-        self.lbRed.hidden=false;
-        self.lbGreen.hidden=false;
-        self.lbBlue.hidden=false;
-        self.slRed.hidden=false;
-        self.slGreen.hidden=false;
-        self.slBlue.hidden=false;
-        self.rlabel.hidden=false;
-        self.glabel.hidden=false;
-        self.blabel.hidden=false;
     }
+}
+
+- (IBAction)randomColor:(id)sender {
+    int randomRed = [self getRandomNumberBetween:0 to:255];
+    int randomGreen = [self getRandomNumberBetween:0 to:255];
+    int randomBlue = [self getRandomNumberBetween:0 to:255];
+    
+    self.slRed.value = randomRed;
+    self.slGreen.value = randomGreen;
+    self.slBlue.value = randomBlue;
+    
+    [self refreshColor];
+}
+
+-(int)getRandomNumberBetween:(int)from to:(int)to {
+    
+    return (int)from + arc4random() % (to-from+1);
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

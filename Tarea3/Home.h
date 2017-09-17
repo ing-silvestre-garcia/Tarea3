@@ -27,6 +27,11 @@
 - (IBAction)changeRed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UISwitch *ocultar;
+@property (weak, nonatomic) IBOutlet UIButton *btsuerte;
 
+-(int)getRandomNumberBetween:(int)from to:(int)to;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtNombre;
+@property (weak, nonatomic) IBOutlet UITextField *txtTelefono;
 @end
 
