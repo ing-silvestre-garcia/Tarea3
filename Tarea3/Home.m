@@ -26,6 +26,8 @@ NSString *mensajeCirculo;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self refreshColor];
+    self.circle.layer.masksToBounds = true;
+    self.circle.layer.cornerRadius= 126 / 2;
 }
 
 void setColor(int rcol,int gcol,int bcol){
@@ -54,7 +56,7 @@ void setColor(int rcol,int gcol,int bcol){
     setColor(rcolor, gcolor, bcolor);
     
     
-    self.lbColor.backgroundColor=color;
+    self.circle.backgroundColor=color;
     
     NSString *hexred=@"";
     hexred = [NSString stringWithFormat:@"%lX",
@@ -86,10 +88,8 @@ void setColor(int rcol,int gcol,int bcol){
 - (IBAction)switchVisibleValue:(id)sender {
     UISwitch *mySwitch = (UISwitch *)sender;
     if ([mySwitch isOn]) {
-        self.lbColor.hidden=true;
         self.circle.hidden=true;
     } else {
-        self.lbColor.hidden=false;
         self.circle.hidden=false;
     }
 }

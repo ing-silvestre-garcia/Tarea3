@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface Home : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *lbColor;
+@property (weak, nonatomic) IBOutlet UIView *circle;
 @property (weak, nonatomic) IBOutlet UILabel *lbRed;
 @property (weak, nonatomic) IBOutlet UILabel *lbGreen;
 @property (weak, nonatomic) IBOutlet UILabel *lbBlue;
-@property (weak, nonatomic) IBOutlet UILabel *circle;
 @property (weak, nonatomic) IBOutlet UILabel *rlabel;
 @property (weak, nonatomic) IBOutlet UILabel *glabel;
 @property (weak, nonatomic) IBOutlet UILabel *blabel;

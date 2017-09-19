@@ -84,14 +84,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ms-hK-PMx">
-                                <rect key="frame" x="51" y="28" width="84" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.0099468241870000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jN2-9d-I3M">
                                 <rect key="frame" x="177" y="93" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -151,7 +143,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YWr-6k-jlh">
-                                <rect key="frame" x="143" y="20" width="157" height="65"/>
+                                <rect key="frame" x="34" y="20" width="126" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
@@ -168,9 +160,9 @@
                         <outlet property="blabel" destination="v0D-eb-niZ" id="ZmH-0n-pD7"/>
                         <outlet property="btAlerta" destination="u46-pe-nYb" id="CRP-rH-gRD"/>
                         <outlet property="btsuerte" destination="RXD-m0-tVM" id="MgW-1Y-pbe"/>
+                        <outlet property="circle" destination="YWr-6k-jlh" id="Ed6-41-wsl"/>
                         <outlet property="glabel" destination="iGX-48-fL7" id="x8v-Do-cDo"/>
                         <outlet property="lbBlue" destination="ohc-gg-ulg" id="Upi-rn-dzB"/>
-                        <outlet property="lbColor" destination="1ms-hK-PMx" id="8Dp-4G-4n1"/>
                         <outlet property="lbGreen" destination="G2t-ik-dPL" id="VUy-hi-N5X"/>
                         <outlet property="lbRed" destination="4Q3-y9-s2e" id="OYr-3p-fUn"/>
                         <outlet property="ocultar" destination="jN2-9d-I3M" id="RMH-r5-7Uz"/>
