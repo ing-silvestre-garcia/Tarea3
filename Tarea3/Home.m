@@ -115,7 +115,24 @@ void setColor(int rcol,int gcol,int bcol){
     if ([self.ocultar isOn]) {
         mensajeCirculo = @"No hay circulo";
     } else {
-        mensajeCirculo = @"Hex: ";
+        NSString *hexred=@"";
+        hexred = [NSString stringWithFormat:@"%02lX",
+                  (unsigned long)[[@(rcolor) stringValue] integerValue]];
+        
+        NSString *hexgreen=@"";
+        hexgreen = [NSString stringWithFormat:@"%02lX",
+                    (unsigned long)[[@(gcolor) stringValue] integerValue]];
+        
+        NSString *hexblue=@"";
+        hexblue = [NSString stringWithFormat:@"%02lX",
+                   (unsigned long)[[@(bcolor) stringValue] integerValue]];
+        
+        hexred=[self formatHex:hexred];
+        hexgreen=[self formatHex:hexgreen];
+        hexblue=[self formatHex:hexblue];
+        hex = [NSString stringWithFormat:@"%@%@%@",hexred,hexgreen,hexblue ];
+        
+        mensajeCirculo = [NSString stringWithFormat: @"#: %@%@%@",hexred,hexgreen,hexblue];
     }
 
     NSString *mensajeAlerta = [NSString stringWithFormat: @"Nombre: %@ Telefono:  %@, Circulo: %@",self.txtNombre.text,self.txtTelefono.text,mensajeCirculo];
@@ -129,6 +146,14 @@ void setColor(int rcol,int gcol,int bcol){
     
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(NSString*) formatHex:(NSString*)hex{
+    int len = [hex length];
+    if(len==1){
+        hex = [NSString stringWithFormat:@"%@%@",@"0",hex ];
+    }
+    return hex;
 }
 
 - (void)didReceiveMemoryWarning {
