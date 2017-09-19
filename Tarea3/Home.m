@@ -15,7 +15,6 @@ int bcolor=0;
 UIColor *color;
 NSString *hex;
 NSString *mensajeCirculo;
-NSString *mensajeAlerta;
 
 @interface Home ()
 
@@ -117,10 +116,10 @@ void setColor(int rcol,int gcol,int bcol){
     if ([mySwitch isOn]) {
         mensajeCirculo = @"No hay circulo";
     } else {
-        mensajeCirculo = [@"Hex: ",@(rcolor) stringValue];
+        mensajeCirculo = @"Hex: ";
     }
-    
-    mensajeAlerta = [@"Nombre: ",self.txtNombre.text,@" Telefono: ",self.txtTelefono.text,@"Circulo: ",mensajeCirculo];
+
+    NSString *mensajeAlerta = [NSString stringWithFormat: @"Nombre: %@ Telefono:  %@, Circulo: %@",self.txtNombre.text,self.txtTelefono.text,mensajeCirculo];
     
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Alerta"
         message:mensajeAlerta
