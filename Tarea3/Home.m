@@ -112,8 +112,7 @@ void setColor(int rcol,int gcol,int bcol){
 }
 
 - (IBAction)getAlertView:(id)sender {
-    UISwitch *mySwitch = (UISwitch *)sender;
-    if ([mySwitch isOn]) {
+    if ([self.ocultar isOn]) {
         mensajeCirculo = @"No hay circulo";
     } else {
         mensajeCirculo = @"Hex: ";
